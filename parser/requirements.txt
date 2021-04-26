@@ -1,0 +1,12 @@
+aiohttp==3.6.2
+async-timeout==3.0.1
+attrs==19.3.0
+beautifulsoup4==4.8.2
+chardet==3.0.4
+idna==2.8
+multidict==4.7.4
+psycopg2==2.8.4 --no-binary :all:
+pytz==2019.3
+soupsieve==1.9.5
+SQLAlchemy==1.3.13
+yarl==1.4.2

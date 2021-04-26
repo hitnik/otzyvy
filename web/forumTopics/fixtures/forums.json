@@ -1,0 +1,98 @@
+[
+{
+  "model": "forumTopics.forums",
+  "pk": 1,
+  "fields": {
+    "site": 1,
+    "name": "ByFly. Обсуждение.",
+    "url": "https://forum.onliner.by/viewtopic.php?t=1736876&start=",
+    "pages": 3740,
+    "pagesTotal": 3745,
+    "isActive": true
+  }
+},
+{
+  "model": "forumTopics.forums",
+  "pk": 2,
+  "fields": {
+    "site": 1,
+    "name": "Почему Вы так ненавидите Белтелеком?",
+    "url": "https://forum.onliner.by/viewtopic.php?t=1032465&start=",
+    "pages": 80,
+    "pagesTotal": 81,
+    "isActive": true
+  }
+},
+{
+  "model": "forumTopics.forums",
+  "pk": 3,
+  "fields": {
+    "site": 1,
+    "name": "IPTV. Обсуждение. Решение технических вопросов.",
+    "url": "https://forum.onliner.by/viewtopic.php?t=924892&start=",
+    "pages": 450,
+    "pagesTotal": 451,
+    "isActive": true
+  }
+},
+{
+  "model": "forumTopics.forums",
+  "pk": 4,
+  "fields": {
+    "site": 1,
+    "name": "ByFly. Техническая помощь. Настройка.",
+    "url": "https://forum.onliner.by/viewtopic.php?t=1347629&start=",
+    "pages": 1500,
+    "pagesTotal": 1500,
+    "isActive": true
+  }
+},
+{
+  "model": "forumTopics.forums",
+  "pk": 5,
+  "fields": {
+    "site": 1,
+    "name": "Задай вопрос \"Белтелекому\"",
+    "url": "https://forum.onliner.by/viewtopic.php?t=835389&start=",
+    "pages": 387,
+    "pagesTotal": 387,
+    "isActive": true
+  }
+},
+{
+  "model": "forumTopics.forums",
+  "pk": 6,
+  "fields": {
+    "site": 1,
+    "name": "ZALA.by",
+    "url": "https://forum.onliner.by/viewtopic.php?t=1272317&start=",
+    "pages": 276,
+    "pagesTotal": 276,
+    "isActive": true
+  }
+},
+{
+  "model": "forumTopics.forums",
+  "pk": 7,
+  "fields": {
+    "site": 2,
+    "name": "Отзывы о провайдере Белтелеком (byfly) (providers.by)",
+    "url": "http://providers.by/rating/review-byfly/page/",
+    "pages": 123,
+    "pagesTotal": 123,
+    "isActive": true
+  }
+},
+{
+  "model": "forumTopics.forums",
+  "pk": 8,
+  "fields": {
+    "site": 3,
+    "name": "Отзывы на \"Белтелеком (byfly), интернет-провайдер\" (otzyvy.by)",
+    "url": "http://otzyvy.by/internet_provajdery/5840/show/20/page/",
+    "pages": 70,
+    "pagesTotal": 70,
+    "isActive": true
+  }
+}
+]

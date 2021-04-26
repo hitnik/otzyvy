@@ -1,0 +1,130 @@
+version: '3'
+
+x-web-common:
+  &web-common
+  build: ./web
+  env_file:
+    - .env
+  volumes:
+    - ./web/:/usr/src/app/
+services:
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/usr/src/app/staticfiles
+      - media_volume:/usr/src/app/mediafiles
+    ports:
+      - 80:80
+      - 8000:8000
+    networks:
+      - front
+    depends_on:
+      - web
+      - ui
+    restart: always
+  ui:
+    build: ./ui
+    entrypoint: [ "sh","/usr/src/app/entrypoint.sh"]
+    command: http-server ./dist -p=3000
+    env_file:
+      - .env
+    expose:
+      - 3000
+    networks:
+      - front
+    restart: always
+  web:
+    <<: *web-common
+    entrypoint: ["sh","/usr/src/app/entrypoint.sh"]
+    command: gunicorn web.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - ./web/:/usr/src/app/
+      - static_volume:/usr/src/app/staticfiles
+      - media_volume:/usr/src/app/mediafiles
+    expose:
+      - 8000
+    depends_on:
+      - db
+      - redis
+      - pdf
+    networks:
+      - front
+      - back
+    restart: always
+  parser:
+    build: ./parser
+    command: python parser.py
+    volumes:
+      - ./parser/:/usr/src/app/
+    env_file:
+      - .env
+    networks:
+      - back
+    depends_on:
+      - db
+      - web
+    restart: always
+  pdf:
+    build: ./pdf
+    command: gunicorn --bind 0.0.0.0:5000 wsgi:app
+    volumes:
+      - ./pdf/:/usr/src/app/
+    expose:
+      - 5000
+    networks:
+      - back
+    restart: always
+  db:
+    image: postgres:13-alpine
+    volumes:
+      - pg_data:/var/lib/postgresql/data/
+    env_file:
+      - .env
+    networks:
+      - back
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "django" ]
+      interval: 5s
+      retries: 5
+    restart: always
+  redis:
+    container_name: redis
+    image: redis:5-alpine
+    expose:
+      - 6379
+    volumes:
+      - redis_data:/data
+    networks:
+      - back
+    restart: always
+  worker:
+    <<: *web-common
+    command: python manage.py rqworker default
+    networks:
+      - back
+    depends_on:
+      - db
+      - redis
+      - pdf
+      - web
+    restart: always
+  scheduler:
+    <<: *web-common
+    command: python manage.py rqscheduler
+    networks:
+      - back
+    depends_on:
+      - db
+      - redis
+      - pdf
+      - web
+    restart: always
+volumes:
+  pg_data:
+  alpine:
+  redis_data:
+  static_volume:
+  media_volume:
+networks:
+  front:
+  back:

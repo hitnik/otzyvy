@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+   <link rel="apple-touch-icon" sizes="57x57" href="https://my.beltelecom.by//favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://my.beltelecom.by//favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://my.beltelecom.by//favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://my.beltelecom.by//favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://my.beltelecom.by//favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://my.beltelecom.by//favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://my.beltelecom.by//favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://my.beltelecom.by//favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://my.beltelecom.by//favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://my.beltelecom.by//favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://my.beltelecom.by//favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://my.beltelecom.by//favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://my.beltelecom.by//favicon/favicon-16x16.png">
+
+    <title>Отзывы о Белтелеком</title>
+
+
+    <!-- Bootstrap core CSS-->
+
+    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
+ <link rel="stylesheet" href="{% static 'forumTopics/css/bootstrap.min.css' %}">
+
+    <!-- Optional theme -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,500&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'forumTopics/css/style.css' %}" >
+
+    <link href="{% static 'forumTopics/css/datepicker.min.css' %}" rel="stylesheet" type="text/css">
+
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body>
+
+{#          {% include 'navbar.html' %}  #}
+
+            {% block content %}
+            {% endblock content %}
+
+
+{#            {% include 'footer.html' %}#}
+
+ <!-- Modal -->
+
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+      	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <img src="" id="imagepreview" style="width: 100%;" >
+      </div>
+    </div>
+  </div>
+</div>
+
+<script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <script data-require="bootstrap@3.3.7" data-semver="3.3.7" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- custom scripts -->
+<script src="{% static 'forumTopics/js/functions.js' %}"></script>
+<script src="{% static 'forumTopics/js/datepicker.min.js' %}"></script>
+<script src="{% static 'forumTopics/js/script.js' %}"></script>
+
+</body>
+</html>

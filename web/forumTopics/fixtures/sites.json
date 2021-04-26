@@ -1,0 +1,29 @@
+[
+{
+  "model": "forumTopics.sites",
+  "pk": 1,
+  "fields": {
+    "name": "onliner.by",
+    "short": "on",
+    "isActive": true
+  }
+},
+{
+  "model": "forumTopics.sites",
+  "pk": 2,
+  "fields": {
+    "name": "providers.by",
+    "short": "pr",
+    "isActive": true
+  }
+},
+{
+  "model": "forumTopics.sites",
+  "pk": 3,
+  "fields": {
+    "name": "otzyvy.by",
+    "short": "ot",
+    "isActive": true
+  }
+}
+]

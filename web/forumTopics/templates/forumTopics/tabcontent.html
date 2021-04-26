@@ -1,0 +1,78 @@
+<div class="container container-topics">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-sm-12">
+
+            <!-- блок аккордеон -->
+<div class="accordion" id="top">
+    {% for forum,topics in topicDict.items %}
+        <section class="accordion_item">
+            <div class="title-container">
+               {% if topics|length > 0 %}
+                    <h3 class="title_block">
+               {% else %}
+                    <h3 class="title_block_disabled" class="btn btn-secondary"
+                        data-toggle="tooltip" data-placement="top" title="Здесь пусто">
+               {% endif %}
+                    {{ forum.name }}<span class="badge ">{{ topics|length}}</span></h3>
+            </div>
+            <div class="info">
+
+                    {% for topic in topics %}
+
+                        <div
+                        {% if forloop.counter|divisibleby:"2" %}
+                             class="message message-odd">
+                        {% else %}
+                            class="message">
+                        {% endif %}
+                            <div class="row">
+                                <div  class="col-lg-12 col-sm-12 message-header">
+                                    <h4 class="message-header-title" >{{ topic.user }}</h4>
+                                    <span class="message-date">{{ topic.datePost|date:"d E Y H:i"}}</span>
+                                   {% if topic.url%}
+                                           <a target="_blank"  class="message-url-original" href="{{ topic.url }}"
+                                       {% else %}
+                                          <a class="message-url-original" href="#"
+                                       {% endif %}
+                                        >Перейти на сайт</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-lg-12 col-sm-12 message-content">
+                            {% autoescape off %}
+                                    {{ topic.topicText }}
+                                {% endautoescape %}
+                            </div>
+                            </div>
+                         </div>
+
+                    {% endfor %}
+
+            </div>
+        </section>
+    {% endfor %}
+
+</div>
+
+        </div>
+    </div>
+
+<script>
+var o, n;
+      $(".title_block").on("click", function() {
+        if($(".container-fixed-inner").has($(".title_block"))){
+         elem=$(".container-fixed-inner").find( $(".title_block"));
+         elem.removeClass("fixed");
+         $(".active_block").find( $(".title-container")).append(elem)
+        }
+        o = $(this).parents(".accordion_item");
+        n = o.find(".info");
+        o.hasClass("active_block") ? (o.removeClass("active_block"),
+            n.slideUp()) : (o.addClass("active_block"),  n.stop(!0, !0).slideDown(),
+            o.siblings(".active_block").removeClass("active_block").children(
+              ".info").stop(!0, !0).slideUp());
+        $('body,html').animate({scrollTop: 0}, 200);
+      });
+
+</script>
+</div>

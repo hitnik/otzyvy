@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{%  load static %}
+
+{% block content %}
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+     <div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div id="error_container" class="alert alert-danger alert-dismissable">
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-lg-offset-1 col-sm-12">
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon date-nav" id="yesterday">&laquo;</span>
+            <input type="text" class="form-control datepicker-here"
+                   placeholder="{{ dateString }}" id="main_date_field" />
+            <span class="input-group-addon date-nav" id="tomorrow">&raquo;</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <div class="container topic-header">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-sm-12">
+                <ul class="nav nav-tabs">
+                    {% for site,topics in siteDict.items %}
+                        {% if site.id == siteId %}
+                            {% if topics == 0 %}
+                                <li class="active disabled" >
+                            {% else %}
+                                <li class="active">
+                            {% endif %}
+                        {% else %}
+                            {% if topics == 0 %}
+                                <li class="disabled" data-toggle="tooltip" data-placement="bottom" title="Здесь пусто" >
+                            {% else %}
+                                <li>
+                            {% endif %}
+                        {% endif %}
+                        <a class="tab-toggle-button" id="tab{{ site.id }}" data-v="{{ site.id }}" href="#" >{{ site.name }}
+                            <span class="badge ">{{ topics }}</span></a></li>
+                    {% endfor %}
+                </ul>
+
+
+            </div>
+         </div>
+    <div class="container-fixed">
+        <div class="row">
+        <div class="container-fixed-inner col-lg-10 col-lg-offset-1 col-sm-12">
+        </div>
+        </div>
+    </div>
+
+    </div>
+
+</div>
+
+<div id="tabContent">
+
+    {% include 'forumTopics/tabcontent.html' %}
+
+
+</div>
+
+{% endblock %}

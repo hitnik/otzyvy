@@ -1,0 +1,293 @@
+html, body{
+    height: 100%;
+    max-height: 100%;
+    font-family: 'Roboto', sans-serif;
+
+    min-height: 100%;
+    padding-top: 50px;
+    position: relative;
+    margin-bottom: 20px; /* Margin bottom by footer height */
+}
+
+.center{
+text-align: center;
+color: red;
+}
+.footer {
+   position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10vh;
+  background-color: #f5f5f5;
+}
+
+.container {
+	padding-left: 0px;
+	padding-right: 0px;
+	width: 100%;
+    text-align: center;
+}
+
+.date-nav {
+    font-size: 5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.topic-content{
+    padding-top: 5px;
+}
+#error_container{
+    display: none;
+}
+
+.panel-content{
+    height: 60%;
+    overflow-y: auto;
+}
+.buttons-nav{
+    align-items: flex-start;
+}
+
+.panel-heading{
+    text-align: center;
+}
+
+/* стили блока аккордеон */
+.accordion {
+  width:100%;
+  margin: 0 auto
+}
+/* секции аккордеона */
+.accordion .accordion_item {
+  margin-bottom:1px;
+  position:relative
+}
+/* заголовки панелей аккордеона */
+.accordion .title_block {
+  font-weight: 400;
+  font-size: 18px;
+  color: #555;
+  cursor:pointer;
+  background: #f8f8f8;
+  padding:10px 55px 10px 15px;
+  -webkit-transition:all .2s linear 0;
+  -webkit-transition-delay:.2s 0;
+  transition:all .2s linear 0;
+}
+/* переключатель панелей, положение вниз */
+.accordion .title_block:before {
+  color: #555;
+  content:'';
+  height:8px;
+  width:8px;
+  display:block;
+  border:2px solid #555;
+  border-right-width:0;
+  border-top-width:0;
+  -ms-transform:rotate(-45deg);
+  -webkit-transform:rotate(-45deg);
+  transform:rotate(-45deg);
+  position:absolute;
+  right:20px;
+  top:18px
+}
+/* активный переключатель, положение вверх */
+.accordion .active_block .title_block:before {
+  border:2px solid #fefefe;
+  border-left-width:0;
+  border-bottom-width:0;
+  top:18px
+}
+.accordion .title_block:hover {
+  background: #5b80b2;
+}
+
+/* заголовок активного блока  */
+.accordion .active_block .title_block {
+  background: #5b80b2;
+  color:#fefefe
+}
+
+.accordion .title_block_disabled {
+  font-weight: 400;
+  font-size: 18px;
+  color: #aaaaaa;
+  cursor:pointer;
+  background: #f8f8f8;
+  padding:10px 55px 10px 15px;
+  -webkit-transition:all .2s linear 0;
+  -webkit-transition-delay:.2s 0;
+  transition:all .2s linear 0;
+}
+
+
+
+/* блоки с содержанием */
+.accordion .info {
+  display:none;
+  padding:10px 15px;
+  overflow: hidden;
+  background:white;
+}
+/* параграф внутри блоков с содержанием */
+.accordion .info_item {
+  margin-bottom:10px
+}
+/* картинки внутри аккордеона */
+.accordion .info img {
+    height: auto;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+/* полноразмерная картинка */
+.large-img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+/* миниатюра слева */
+.img-left {
+    width: 25%;
+    float:left;
+    margin:5px 15px 5px 0;
+}
+/* миниатюра справа */
+.img-right {
+    width: 25%;
+    float:right;
+    margin:5px 0 5px 15px;
+}
+
+.fixed{
+    font-weight: 400;
+  font-size: 18px;
+  cursor:pointer;
+  padding:10px 55px 10px 15px;
+  background: #5b80b2;
+    color:#fefefe;
+}
+
+.message {
+    position: relative;
+    background-color: #e1e5e8;
+    border: 1px solid #e1e5e8;
+    padding-bottom: 10px;
+    margin-bottom: 1px;
+    zoom: 1;
+}
+
+.message-odd{
+    background-color: #f0f1f2;
+    border-color: #f0f1f2;
+}
+.message-header {
+    padding: 5px 0 5px 0px;
+    margin: 0 10px;
+
+
+}
+
+.message-header-title{
+    float: left;
+    min-width: 20%;
+    position: relative;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.message-date {
+    float: left;
+    position: relative;
+    padding-top: 10px;
+    padding-left: 5px;
+    color: #777;
+    font: 14px/18px Arial, Helvetica;
+}
+.message-url-original{
+    float: right;
+    position: relative;
+    padding-top: 10px;
+    right: 5%;
+    color: #777;
+    font: 14px/18px Arial,Helvetica;
+}
+
+
+.message-content{
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+.uncited {
+    background-color: #f9fafa;
+    border: 1px solid #d4d4d4;
+    padding: 10px 12px 8px;
+    color: #000;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 17px;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.nav-tabs>li.active>a{
+    color: #003366;
+}
+
+.nav>li.disabled>a {
+    color: #aaaaaa;
+}
+
+.badge {
+    background-color: #447e9b;
+
+}
+
+.tooltip-inner { background-color: #4a4a4a;}
+
+[data-placement="top"] + .tooltip > .tooltip-arrow { border-top-color: #4a4a4a;}
+
+[data-placement="right"] + .tooltip > .tooltip-arrow { border-right-color: #4a4a4a;}
+
+[data-placement="bottom"] + .tooltip > .tooltip-arrow {border-bottom-color: #4a4a4a;}
+
+[data-placement="left"] + .tooltip > .tooltip-arrow {border-left-color: #4a4a4a; }
+
+p.plus>big{font-size:2.5em;color:#69ab00;float:left;margin-left:-20px;margin-top:-15px}
+p.minus>big{font-size:2.5em;color:#f04722;float:left;margin-left:-20px;margin-top:-15px}
+p.result>big{font-size:2.5em;color:#666;float:left;margin-left:-20px;margin-top:-15px}
+
+.msgpost-img{
+  display: block;
+  max-width: 80%;
+  height: auto;
+}
+
+.msgpost-spoiler {
+    padding: 5px 0 0 10px;
+    margin-bottom: 17px;
+
+}
+
+.msgpost-spoiler-outer {
+
+}
+
+.msgpost-spoiler-i {
+    background: url(https://forum.onliner.by/static/img/i-spoiler.png) no-repeat 0 2px;
+    background-image: url(https://forum.onliner.by/static/img/i-spoiler.png);
+    background-position-x: 0px;
+    background-position-y: 2px;
+    background-size: initial;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    padding: 0 0 0 22px;
+}
+

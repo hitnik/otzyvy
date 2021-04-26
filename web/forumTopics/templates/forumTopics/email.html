@@ -1,0 +1,13 @@
+<h3>Здравствуйте, {{ fullName }}.</h3>
+
+
+<h4>За {{ dateString}} {{ left }} {{ topicsCount }} {{ review }} о Белтелеком.</h4>
+
+{% if is_attach %}
+    <p style="margin-top: 20px; margin-bottom: 20px">Информация в прикрепленном файле или по ссылке:</p>
+{% else %}
+    <p style="margin-top: 20px; margin-bottom: 20px">Информация по ссылке:</p>
+{% endif %}
+
+<a href="{{ url }}"> Открыть форумы за {{ dateString }}</a>
+<p style="font-size:x-small"><i>Internet Explorer не поддерживается</i></p>
